@@ -1,0 +1,26 @@
+exclude:
+  - "**/add*.png"
+
+include:
+  - "**/a*.png"
+  - "**/b*"
+
+src: .
+
+# 生成的资源映射文件
+# 该builder的作用时机不确定 资源生成映射文件后进行混淆的处理 需要对该映射文件进行处理
+input_r_files: [xxx.dart]
+
+# 构建混淆后 输出到的目录名称 同时会去修改pubspec.yaml文件
+output: fap_xxx
+# 输出混淆后的文件映射关系 可以作为其他builder的解析使用
+output_mapper_file: xxx.json
+
+config_file: 'xxx.yaml'
+
+watch: false
+
+# 用来简单debug
+# true 不修改pubspec.yaml 在.dart_tool/.pubspec/生成pubspec_xxx.yaml
+# 单独使用 与其他builder共同修改pubspec.yaml时不一定结果正确
+dbg_pubspec: false
